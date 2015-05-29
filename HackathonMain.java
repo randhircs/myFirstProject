@@ -23,8 +23,8 @@ public class HachathonMain {
 		businessWordList = hackathonUtil.addBusinessWord();
 		neutralWordList = hackathonUtil.addNeutralTerms();
 		String lineStr = "";
-		String outputFileName = "C:\\Users\\Administrator\\Desktop\\DataHackathon\\output_sample1.txt";
-		String inputFileName = "C:\\Users\\Administrator\\Desktop\\DataHackathon\\inputsample.txt";
+		String outputFileName = "C:\\Users\\Administrator\\Desktop\\DataHackathon\\icI-Team_Out.txt";
+		String inputFileName = "C:\\Users\\Administrator\\Desktop\\DataHackathon\\HackathonInput.txt";
 		try {
 
 		    PrintWriter pw = new PrintWriter(new FileWriter(outputFileName));
@@ -65,7 +65,7 @@ public class HachathonMain {
 	public boolean checkForBusinessPattern(String lineStr) {
 		lineStr=lineStr.toLowerCase();
 		for (String businessWord : businessWordList) {
-			String regEx = "\\b" + businessWord + "\\b";
+			String regEx =  businessWord;
 			Pattern p = Pattern.compile(regEx);
 			Matcher m = p.matcher(lineStr); // get a matcher object
 			if (m.find()) {
@@ -106,8 +106,8 @@ public class HachathonMain {
 		}
 		// convert all into small
 		lineStr = lineStr.toLowerCase();
-		if (lineStr.contains("why") || lineStr.contains("where")
-				|| lineStr.contains("nothing")) {
+		if (lineStr.contains("why ") || lineStr.contains("where ")
+				|| lineStr.contains("nothing ")) {
 			return true;
 		}
 		if (lineStr.contains("but")) {
@@ -136,7 +136,7 @@ public class HachathonMain {
 	public boolean checkForNeutral(String lineStr) {
 		///parse the feedback in general 
 			for (String neutralWord : neutralWordList) {
-				String regEx = "\\b" + neutralWord + "\\b";
+				String regEx = "\\s"+ neutralWord;
 				Pattern p = Pattern.compile(regEx);
 				Matcher m = p.matcher(lineStr); // get a matcher object
 				if (m.find()) {
