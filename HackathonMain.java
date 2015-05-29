@@ -98,7 +98,7 @@ public class HachathonMain {
 
 	public boolean checkForQuestionAndCaps(String lineStr) {
 		// check for three consecutive capital words
-		String regExpression ="([A-Z]+ [A-Z]+ [A-Z]+)";
+		String regExpression ="(\\s[A-Z]+\\s[A-Z]+\\s[A-Z]+\\s[A-Z]+\\s)";
 		Pattern pt = Pattern.compile(regExpression);
 		Matcher matcher = pt.matcher(lineStr); // get a matcher object
 		if (matcher.find()) {
@@ -121,11 +121,29 @@ public class HachathonMain {
 				}
 			}
 		}
+		///parse the feedback in general 
+		for (String negWord : negativeWordList) {
+			String regEx = "\\b" + negWord + "\\b";
+			Pattern p = Pattern.compile(regEx);
+			Matcher m = p.matcher(lineStr); // get a matcher object
+			if (m.find()) {
+				return true;
+			}
+		}
 		return false;
 	}
 
 	public boolean checkForNeutral(String lineStr) {
-		return false;
+		///parse the feedback in general 
+			for (String neutralWord : neutralWordList) {
+				String regEx = "\\b" + neutralWord + "\\b";
+				Pattern p = Pattern.compile(regEx);
+				Matcher m = p.matcher(lineStr); // get a matcher object
+				if (m.find()) {
+					return true;
+				}
+			}
+			return false;
 	}
 
 }
