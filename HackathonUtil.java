@@ -28,6 +28,7 @@ public class HackathonUtil {
 		list.add("do nothing");
 		list.add("unable to");
 		list.add("slow");
+		list.add("poor");
 		list.add("error");
 		list.add("concern");
 		list.add("not good");
@@ -52,6 +53,9 @@ public class HackathonUtil {
 	public List<String> addBusinessWord(){
 		List<String> list = new ArrayList<String>();
 		list.add("network");
+		list.add("fit");
+		list.add("battery");
+		list.add("terminal");
 		list.add("internet");
 		list.add("service");
 		list.add("fios");
@@ -71,6 +75,15 @@ public class HackathonUtil {
 		list.add("fios");
 		list.add("speed"); 	
 		list.add("technician");
+		list.add("work");
+		list.add("product");
+		list.add("box");
+		list.add("beep");
+		list.add("deliver");
+		list.add("replace");
+		list.add("operate");
+		list.add("battery");
+		list.add("install");
 		return list;
 	}
 	
