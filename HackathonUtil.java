@@ -80,8 +80,6 @@ public class HackathonUtil {
 		list.add("good with");
 		list.add("not bad");
 		list.add("not slow");		
-		list.add("");
-		list.add("");		
 		return list;
 	}
 
